@@ -1,0 +1,73 @@
+<div class="menu-list">
+
+	<div class="menu-container"
+		 aid="PP-documentMenuPopOver-renameDoc"
+		 ng-click="processDocumentsCtrl.rename()">
+
+		<i title="{{processDocumentsCtrl.sdI18n('views-common-messages.views.genericRepositoryView.treeMenuItem.rename')}}" 
+		   class="pi pi-rename pi-lg menu-link tbl-tool-link">
+		</i>
+
+		<span>
+			{{processDocumentsCtrl.sdI18n('views-common-messages.views.genericRepositoryView.treeMenuItem.rename')}}
+		</span>
+
+	</div>
+
+	<div class="menu-container"
+		 aid="PP-documentMenuPopOver-deleteDoc"
+		 ng-click="processDocumentsCtrl.deleteDocument()">
+
+		<i title="{{processDocumentsCtrl.sdI18n('views-common-messages.views.genericRepositoryView.treeMenuItem.delete')}}" 
+		   class="pi pi-delete pi-lg menu-link tbl-tool-link">
+		</i>
+
+		<span>
+			{{processDocumentsCtrl.sdI18n('views-common-messages.views.genericRepositoryView.treeMenuItem.delete')}}
+		</span>
+
+	</div>
+
+	<div class="menu-container"
+		 aid="PP-documentMenuPopOver-viewHistory"
+		 ng-click="processDocumentsCtrl.viewHistory()">
+
+		<i title="{{processDocumentsCtrl.sdI18n('views-common-messages.views.genericRepositoryView.treeMenuItem.versionHistory')}}" 
+		   class="pi pi-document-versions pi-lg menu-link tbl-tool-link">
+		</i>
+
+		<span>
+			{{processDocumentsCtrl.sdI18n('views-common-messages.views.genericRepositoryView.treeMenuItem.versionHistory')}}
+		</span>
+
+	</div>
+
+	<div class="menu-container"
+		 aid="PP-documentMenuPopOver-download"
+		 ng-click="processDocumentsCtrl.download()">
+
+		<i title="{{processDocumentsCtrl.sdI18n('views-common-messages.views.genericRepositoryView.treeMenuItem.download')}}" 
+		   class="pi pi-download-document pi-lg menu-link tbl-tool-link">
+		</i>
+
+		<span>
+			{{processDocumentsCtrl.sdI18n('views-common-messages.views.genericRepositoryView.treeMenuItem.download')}}
+		</span>
+
+	</div>
+
+	<div class="menu-container"
+		 aid="PP-documentMenuPopOver-uploadNewVersion"
+		 ng-click="processDocumentsCtrl.uploadNewVersion()">
+
+		<i title="{{processDocumentsCtrl.sdI18n('views-common-messages.views.genericRepositoryView.treeMenuItem.newVersion')}}" 
+		   class="pi pi-upload pi-lg menu-link tbl-tool-link">
+		</i>
+
+		<span>
+			{{processDocumentsCtrl.sdI18n('views-common-messages.views.genericRepositoryView.treeMenuItem.newVersion')}}
+		</span>
+
+	</div>
+
+</div>

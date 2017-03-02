@@ -1,0 +1,123 @@
+<div>
+	<div class="properties-container">
+
+		<h1 aid="PP-notesPanel-processNote-label" ng-show="notesCtrl.showProcessNotes">
+			{{notesCtrl.processNotes.label}}
+		</h1>
+
+		<div aid="PP-notesPanel-processNotes-list" sd-scroll-to="notesCtrl.processNotesPosition" class="propertiesContent">
+
+			<div class="properties-panel-content" 
+				 aid="PP-notesPanel-processNote-noNotes"
+				 ng-show="notesCtrl.processNotes.list.length==0">
+				{{notesCtrl.sdI18n('views-common-messages.propertiesPage.noNotes')}}
+			</div>
+			
+			<div class="properties-panel-notesRow"
+				 style="position:relative;"
+				 ng-show="notesCtrl.showProcessNotes"
+				 aid="{{$index}}"
+				 ng-repeat="note in notesCtrl.processNotes.list">
+
+				<div aid="PP-notesPanel-processNotes-list-content" class="properties-panel-content" style="width:30px;display:inline-block;vertical-align:top;">
+					<sd-user-image sda-path="{{note.avatarImageURI}}"></sd-user-image>
+				</div>			
+
+				<div style="display:inline-block;width:calc(100% - 34px)">
+
+					<div aid="PP-notesPanel-processNotes-list-noteUser" class="properties-panel-noteUser">
+						{{note.creatorName}}
+					</div>
+
+					<div aid="PP-notesPanel-processNotes-list-noteDate" class="properties-panel-noteDate">
+						{{note.created| sdDateTimeFilter}}
+					</div>
+
+					<div aid="PP-notesPanel-processNotes-list-note" class="noteText">
+						{{note.note}}
+					</div>
+
+				</div>	
+
+			</div>
+
+		</div>
+
+		<div class="properties-panel-border" style="overflow: auto">
+
+			<textarea type="text" ng-model="notesCtrl.processNote" rows="3"
+				aid="PP-notesPanel-procNote"
+				sd-auto-tab-to="addProcessNoteId"
+				placeholder="{{notesCtrl.sdI18n('processportal.views.notesPanel.propertiesPage.addProcessNote')}}">
+	        </textarea>
+
+			<button class='pi pi-add pi-1x' id="addProcessNoteId"
+				aid="PP-notesPanel-addProcNote"
+				title="{{notesCtrl.sdI18n('processportal.views.notesPanel.header.addNote')}}"
+				ng-disabled="!(notesCtrl.processNote.length > 0)"
+				ng-click="notesCtrl.addProcessNotes()"></button>
+
+		</div>
+	</div>
+
+	<div class="properties-container">
+
+		<h1 aid="PP-notesPanel-activityNote-label" ng-show="notesCtrl.showActivityNotes">
+			{{notesCtrl.activityNotes.label}}
+		</h1>
+
+		<div aid="PP-notesPanel-activityNote-list" sd-scroll-to="notesCtrl.activityNotesPosition" class="propertiesContent">
+
+			<div class="properties-panel-content" 
+				 aid="PP-notesPanel-activityNote-noNotes"
+				 ng-show="notesCtrl.activityNotes.list.length==0">
+				{{notesCtrl.sdI18n('views-common-messages.propertiesPage.noNotes')}}
+			</div>
+
+			<div class="properties-panel-notesRow"
+				 style="position:relative;"
+				 ng-show="notesCtrl.showActivityNotes"
+				 aid="{{$index}}"
+				 ng-repeat="note in notesCtrl.activityNotes.list">
+
+				<div aid="PP-notesPanel-activityNote-list-content" class="properties-panel-content" style="width:30px;display:inline-block;vertical-align:top;">
+					<sd-user-image sda-path="{{note.avatarImageURI}}"></sd-user-image>
+				</div>			
+
+				<div style="display:inline-block;width:calc(100% - 34px)">
+
+					<div aid="PP-notesPanel-activityNote-list-creater" class="properties-panel-noteUser">
+						{{note.creatorName}}
+					</div>
+
+					<div aid="PP-notesPanel-activityNote-list-dateTime" class="properties-panel-noteDate">
+						{{note.created| sdDateTimeFilter}}
+					</div>
+
+					<div aid="PP-notesPanel-activityNote-list-note" class="noteText">
+						{{note.note}}
+					</div>
+
+				</div>	
+
+			</div>
+			
+		</div>
+
+		<div class="properties-panel-border" style="overflow: auto">
+			<textarea type="text" ng-model="notesCtrl.activityNote" rows="3"
+				sd-auto-tab-to="addActivityNoteId"
+				aid="PP-notesPanel-activityNote"
+				placeholder="{{notesCtrl.sdI18n('processportal.views.notesPanel.propertiesPage.addActivityNote')}}">
+	        </textarea>
+
+			<button class='pi pi-add pi-1x' id="addActivityNoteId"
+				aid="PP-notesPanel-addActivityNote"
+				title="{{notesCtrl.sdI18n('processportal.views.notesPanel.header.addNote')}}"
+				ng-disabled="!(notesCtrl.activityNote.length > 0)"
+				ng-click="notesCtrl.addActivityNotes()"></button>
+
+		</div>
+		
+	</div>
+</div>
